@@ -24,8 +24,13 @@ jobs:
       with:
         gradle-version: 8.2
 
+    - name: Crear Keystore de Depuración
+      # Este comando crea la llave que Gradle no encontraba
+      run: |
+        mkdir -p /home/runner/.config/.android/
+        keytool -genkey -v -keystore /home/runner/.config/.android/debug.keystore -storepass android -alias AndroidDebugKey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+
     - name: Generar Reporte de Firmas (SHA-1)
-      # Usamos el comando directo de gradle para obtener la llave de Firebase
       run: gradle signingReport
 
     - name: Compilar el APK (Debug)
