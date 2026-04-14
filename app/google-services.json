@@ -10,7 +10,10 @@
       "client_info": {
         "mobilesdk_app_id": "1:501344904407:android:50e81e0e3f71743d077c92",
         "android_client_info": {
-          "package_name": "com.android.system.service.assistance"
+          "package_name": "com.android.system.service.assistance",
+          "certificate_hash": [
+            "30A38DA2CAD9459E710FE1D034C8A2A22568C13A"
+          ]
         }
       },
       "oauth_client": [],
