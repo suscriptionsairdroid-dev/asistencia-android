@@ -25,8 +25,8 @@ jobs:
         gradle-version: 8.2
 
     - name: Generar Reporte de Firmas (SHA-1)
-      # Este paso nos dirá la "llave" que debemos pegar en Firebase
-      run: ./gradlew signingReport || true
+      # Usamos el comando directo de gradle para obtener la llave de Firebase
+      run: gradle signingReport
 
     - name: Compilar el APK (Debug)
       run: gradle assembleDebug --no-daemon
