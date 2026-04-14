@@ -33,7 +33,8 @@ android {
 }
 
 dependencies {
-    implementation(platform("com.google.firebase:firebase-bom:34.12.0"))
+    // Usamos una versión de BoM ligeramente anterior pero estable
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2")) 
     implementation("com.google.firebase:firebase-database")
     implementation("com.google.firebase:firebase-messaging")
     implementation("com.google.firebase:firebase-analytics")
