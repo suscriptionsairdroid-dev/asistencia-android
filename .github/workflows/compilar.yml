@@ -22,7 +22,11 @@ jobs:
     - name: Configurar Gradle Específico
       uses: gradle/actions/setup-gradle@v3
       with:
-        gradle-version: 8.2  # <--- Forzamos la versión estable
+        gradle-version: 8.2
+
+    - name: Generar Reporte de Firmas (SHA-1)
+      # Este paso nos dirá la "llave" que debemos pegar en Firebase
+      run: ./gradlew signingReport || true
 
     - name: Compilar el APK (Debug)
       run: gradle assembleDebug --no-daemon
