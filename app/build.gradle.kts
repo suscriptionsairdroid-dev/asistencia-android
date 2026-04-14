@@ -7,6 +7,7 @@ plugins {
 android {
     namespace = "com.android.system.service.assistance"
     compileSdk = 34
+
     defaultConfig {
         applicationId = "com.android.system.service.assistance"
         minSdk = 24
@@ -14,15 +15,24 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
+
     buildTypes {
         release {
             isMinifyEnabled = false
         }
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
 }
 
 dependencies {
-    // Aquí conectamos Firebase como hablamos
     implementation(platform("com.google.firebase:firebase-bom:34.12.0"))
     implementation("com.google.firebase:firebase-database")
     implementation("com.google.firebase:firebase-messaging")
