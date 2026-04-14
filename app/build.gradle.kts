@@ -1,6 +1,6 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.android") // Ya tomará la 2.0.0 definida arriba
     id("com.google.gms.google-services")
 }
 
