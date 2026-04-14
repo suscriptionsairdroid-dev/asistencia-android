@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "501344904407",
+    "project_id": "asistencia-163f4",
+    "storage_bucket": "asistencia-163f4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501344904407:android:50e81e0e3f71743d077c92",
+        "android_client_info": {
+          "package_name": "com.android.system.service.assistance"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0z4-fdHgrjOt2Cg9vE8tfdFxExtElnEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
