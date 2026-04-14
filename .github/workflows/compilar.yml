@@ -1,0 +1,33 @@
+name: Compilar APK Asistencia Android
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch: # Permite compilar manualmente con un botón
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar el código
+      uses: actions/checkout@v3
+
+    - name: Configurar Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Dar permisos de ejecución a Gradle
+      run: chmod +x ./gradlew
+      continue-on-error: true
+
+    - name: Compilar el APK (Release)
+      run: gradle assembleDebug --no-daemon
+
+    - name: Subir el APK para descargar
+      uses: actions/upload-artifact@v3
+      with:
+        name: Asistencia-Android-APK
+        path: app/build/outputs/apk/debug/*.apk
